@@ -1,0 +1,48 @@
+assignment 7
+due in two weeks
+next week: the first test during the lab
+
+classes! + read / write to file
+console based application
+1 add
+2 display
+3 filter
+4 undo
+
+classes:
+UI
+has as an attribute a service object
+|
+V
+Service -> functions for each functionality (add, filter, undo, get_all)
+the service uses repository, whenever needed, ie add: creates the domain object, uses add from repo
+|
+V
+Repository -> manages the list of elements (add, remove, search an element, return all elements)
+manages read / write to file
+|
+V
+Domain -> get, set, create, to_string (how we manage our entities)
+
+for testing we can use functions, not necessarily classes
+
+repository:
+we need to implement three different types of repositories
+    - in memory repo -> no files, just keeps the list in memory
+    - text file -> .txt just put data in text file
+    - binary file -> .pickle/ copies the list represented in memory and puts it into the file, we have to use the pickle package
+
+how we choose which one to use:
+
+start.py
+create objects for repo, service, ui
+here we link them then run ui
+we decide what type of repository to use
+we shouldn't have to change anything else besides start to choose the repository
+
+tests and specifications for non-ui / functionality module for the first functionality
+
+have 10 elements generated randomly
+when using file repositories, if we already have 10 elements in the file, generate elements only if list is empty
+
+eu: problem 1
